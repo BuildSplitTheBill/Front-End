@@ -9,13 +9,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/friends">Friends</NavLink>
-          <NavLink to="/balances">Balances</NavLink>
-          <NavLink to="/add-bill-form">Add Bill</NavLink>
-          <NavLink to="/History">History</NavLink>
-        </nav>
+        <div className="nav-container">
+          <nav>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/friends">Friends</NavLink>
+            <NavLink to="/balances">Balances</NavLink>
+            <NavLink to="/add-bill-form">Add Bill</NavLink>
+            <NavLink to="/History">History</NavLink>
+          </nav>
+        </div>
 
         <Route
           exact

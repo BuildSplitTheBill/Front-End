@@ -2,7 +2,6 @@
   text-align: center;
   max-width: 1024px;
   margin: 0 auto;
-  padding: 20px;
   border: 2px solid black;
   border-radius: 3px;
   box-shadow: -1px 1px 2px black;
@@ -11,9 +10,40 @@
 .App h1 {
   font-size: 4rem;
 }
-.App a,
-.App a:visited {
+.App h2 {
+  font-size: 3.2rem;
+}
+.App h3 {
+  font-size: 2.8rem;
+}
+.App h4 {
+  font-size: 2.4rem;
+}
+.App p {
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+.nav-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: #98ff98;
+  padding: 15px;
+}
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+nav a,
+nav a:visited {
   text-decoration: none;
   font-size: 2rem;
   color: black;
+  background: white;
+  border: 1px solid black;
+  box-shadow: -1px 1px 1px black;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-right: 10px;
 }

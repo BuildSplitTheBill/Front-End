@@ -1,0 +1,26 @@
+.flex(@justify:space-evenly, @align:center, @direction:row) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+.flex-v(@justify:space-evenly, @align:center, @direction:column) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+.button(@background: #98ff98, @color:white) {
+  background: @background;
+  color: @color;
+  font-size: 1.6rem;
+  border-radius: 10px;
+  border: 1px solid black;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    background: @color;
+    color: @background;
+    border: 2px solid @background;
+  }
+}
