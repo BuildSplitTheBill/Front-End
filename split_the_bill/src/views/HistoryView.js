@@ -1,7 +1,8 @@
 import React from "react";
+import HistoryList from "../components/HistoryList";
 
-const History = props => {
-  return;
+const HistoryView = props => {
+  return <HistoryList />;
 };
 
-export default History;
+export default HistoryView;

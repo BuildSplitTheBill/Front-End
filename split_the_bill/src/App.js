@@ -7,6 +7,7 @@ import FriendsView from "./views/FriendsView";
 import BillsView from "./views/BillsView";
 
 import AddBillForm from "./components/AddBillForm";
+import SettleBalances from "./components/SettleBalances";
 
 import "./css/index.css";
 
@@ -20,7 +21,7 @@ class App extends Component {
             <NavLink to="/friends">Friends</NavLink>
             <NavLink to="/bills">Bills</NavLink>
             <NavLink to="/add-bill-form">Add a Bill</NavLink>
-            <NavLink to="/settle">Settle Up</NavLink>
+            <NavLink to="/settle-balances">Settle Up</NavLink>
             <NavLink to="/History">History</NavLink>
           </nav>
         </div>
@@ -34,6 +35,11 @@ class App extends Component {
         <Route
           path="/add-bill-form"
           render={props => <AddBillForm {...props} />}
+        />
+
+        <Route
+          path="/settle-balances"
+          render={props => <SettleBalances {...props} />}
         />
       </div>
     );
