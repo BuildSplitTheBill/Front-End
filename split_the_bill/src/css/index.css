@@ -23,6 +23,27 @@
   font-size: 1.6rem;
   line-height: 1.4;
 }
+.App li {
+  font-size: 1.8rem;
+}
+.App .green {
+  color: green;
+}
+.App .red {
+  color: red;
+}
+.App .green-header {
+  background: green;
+  color: white;
+  width: 100%;
+  padding: 5px 0;
+}
+.App .red-header {
+  background: red;
+  color: white;
+  width: 100%;
+  padding: 5px 0;
+}
 .nav-container {
   display: flex;
   justify-content: flex-end;
@@ -82,28 +103,100 @@ nav a:visited {
   width: 30%;
   padding: 0 0 10px;
   border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: -1px 1px 1px black;
+  margin-bottom: 10px;
 }
 .balances-page .balances-column h3 {
   margin-bottom: 10px;
+  padding: 10px 0;
 }
-.balances-page .balances-column li {
+.friends-page {
+  width: 70%;
+  margin: 20px auto;
+  padding: 15px 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: -1px 1px 1px black;
+}
+.friends-page h2 {
+  margin-bottom: 10px;
+}
+.friends-page form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.friends-page form p {
   font-size: 1.8rem;
 }
-.balances-page .green {
-  color: green;
+.friends-page form .form-input {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  margin: 10px;
 }
-.balances-page .red {
-  color: red;
-}
-.balances-page .green-header {
-  background: green;
-  color: white;
-  width: 100%;
+.friends-page form .form-input input {
+  width: 200px;
+  text-align: left;
   padding: 5px 0;
+  padding-left: 5px;
+  font-size: 1.6rem;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: -1px 1px 1px black;
 }
-.balances-page .red-header {
-  background: red;
+.friends-page form button {
+  background: rgba(0, 0, 128, 0.705);
   color: white;
+  font-size: 1.6rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  text-align: center;
+  cursor: pointer;
+  width: 100px;
+  margin-left: 5px;
+  box-shadow: -1px 1px 1px black;
+  font-weight: bold;
+}
+.friends-page form button:hover {
+  background: white;
+  color: rgba(0, 0, 128, 0.705);
+  border: 2px solid rgba(0, 0, 128, 0.705);
+}
+.friends-page .friends-list {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.friends-page .friends-list h2 {
   width: 100%;
-  padding: 5px 0;
+}
+.friends-page .friends-list table {
+  font-family: arial, sans-serif;
+  width: 70%;
+  border: 1px solid black;
+  box-shadow: -1px 1px 1px black;
+}
+.friends-page .friends-list table td,
+.friends-page .friends-list table th {
+  border-bottom: 1px solid black;
+  text-align: center;
+  padding: 10px;
+}
+.friends-page .friends-list table th {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  background: rgba(121, 217, 255, 0.705);
+}
+.friends-page .friends-list table td {
+  font-size: 1.6rem;
 }

@@ -9,7 +9,7 @@ const BalancesDetails = props => {
         <div className="list you-owe">
           <ul>
             <li>
-              Jim: <span className="red">$32.65</span>
+              Jim Jolly: <span className="red">$32.65</span>
             </li>
           </ul>
         </div>
@@ -20,7 +20,7 @@ const BalancesDetails = props => {
         <div className="list you-are-owed">
           <ul>
             <li>
-              Chris: <span className="green">$132.65</span>
+              Chris Mowry: <span className="green">$132.65</span>
             </li>
           </ul>
         </div>
