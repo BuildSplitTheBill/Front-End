@@ -2,15 +2,17 @@
   display: flex;
   justify-content: @justify;
   align-items: @align;
+  flex-direction: @direction;
 }
 
 .flex-v(@justify:space-evenly, @align:center, @direction:column) {
   display: flex;
   justify-content: @justify;
   align-items: @align;
+  flex-direction: @direction;
 }
 
-.button(@background: #98ff98, @color:white) {
+.button(@background: @main-color, @color:white) {
   background: @background;
   color: @color;
   font-size: 1.6rem;

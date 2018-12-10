@@ -13,8 +13,8 @@ class App extends Component {
           <nav>
             <NavLink to="/">Home</NavLink>
             <NavLink to="/friends">Friends</NavLink>
-            <NavLink to="/balances">Balances</NavLink>
-            <NavLink to="/add-bill-form">Add Bill</NavLink>
+            <NavLink to="/add-bill-form">Add a Bill</NavLink>
+            <NavLink to="/settle">Settle Up</NavLink>
             <NavLink to="/History">History</NavLink>
           </nav>
         </div>

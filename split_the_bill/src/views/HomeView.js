@@ -1,7 +1,8 @@
 import React from "react";
+import BalancesView from "./BalancesView";
 
 const HomeView = props => {
-  return <h1>This is HomeView.js</h1>;
+  return <BalancesView />;
 };
 
 export default HomeView;
