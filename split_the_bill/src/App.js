@@ -6,6 +6,8 @@ import HomeView from "../src/views/HomeView";
 import FriendsView from "./views/FriendsView";
 import BillsView from "./views/BillsView";
 
+import AddBillForm from "./components/AddBillForm";
+
 import "./css/index.css";
 
 class App extends Component {
@@ -28,6 +30,11 @@ class App extends Component {
         <Route path="/friends" render={props => <FriendsView {...props} />} />
 
         <Route path="/bills" render={props => <BillsView {...props} />} />
+
+        <Route
+          path="/add-bill-form"
+          render={props => <AddBillForm {...props} />}
+        />
       </div>
     );
   }

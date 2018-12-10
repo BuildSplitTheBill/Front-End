@@ -111,35 +111,24 @@ nav a:visited {
   margin-bottom: 10px;
   padding: 10px 0;
 }
-.friends-page {
-  width: 70%;
-  margin: 20px auto;
-  padding: 15px 0;
-  border: 1px solid black;
-  border-radius: 5px;
-  box-shadow: -1px 1px 1px black;
-}
-.friends-page h2 {
-  margin-bottom: 10px;
-}
-.friends-page form {
+form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   margin-bottom: 10px;
 }
-.friends-page form p {
+form p {
   font-size: 1.8rem;
 }
-.friends-page form .form-input {
+form .form-input {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
   margin: 10px;
 }
-.friends-page form .form-input input {
+form .form-input input {
   width: 200px;
   text-align: left;
   padding: 5px 0;
@@ -149,7 +138,7 @@ nav a:visited {
   border-radius: 3px;
   box-shadow: -1px 1px 1px black;
 }
-.friends-page form button {
+form button {
   background: rgba(0, 0, 128, 0.705);
   color: white;
   font-size: 1.6rem;
@@ -163,10 +152,21 @@ nav a:visited {
   box-shadow: -1px 1px 1px black;
   font-weight: bold;
 }
-.friends-page form button:hover {
+form button:hover {
   background: white;
   color: rgba(0, 0, 128, 0.705);
   border: 2px solid rgba(0, 0, 128, 0.705);
+}
+.friends-page {
+  width: 70%;
+  margin: 20px auto;
+  padding: 15px 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: -1px 1px 1px black;
+}
+.friends-page h2 {
+  margin-bottom: 10px;
 }
 .friends-page .friends-list {
   margin-top: 30px;
@@ -247,4 +247,42 @@ nav a:visited {
 .bills-page .lighter-text {
   color: gray;
   font-size: 1.2rem;
+}
+.add-bill-page {
+  width: 70%;
+  margin: 20px auto;
+}
+.add-bill-page form {
+  width: 70%;
+  margin: 30px auto;
+  padding: 20px;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: -1px 1px 1px black;
+  justify-content: flex-end;
+}
+.add-bill-page form .form-input {
+  justify-content: flex-end;
+  width: 100%;
+}
+.add-bill-page form .form-input p {
+  font-size: 1.8rem;
+}
+.add-bill-page form .form-input input {
+  width: 70%;
+}
+.add-bill-page form .form-input select {
+  width: 70%;
+  padding-left: 40px;
+  font-size: 1.6rem;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: -1px 1px 1px black;
+}
+.add-bill-page button {
+  width: 200px;
+  padding: 10px 0;
+  margin-top: 20px;
+  margin-right: 20px;
 }
