@@ -328,3 +328,25 @@ form button:hover {
   border-radius: 3px;
   box-shadow: -1px 1px 1px black;
 }
+.history-list {
+  width: 75%;
+  border: 1px solid black;
+  margin: 20px auto;
+}
+.history-list h2 {
+  width: 100%;
+  background: green;
+  color: white;
+  padding: 10px;
+}
+.history-list table {
+  font-size: 1.6rem;
+  width: 100%;
+}
+.history-list table tr {
+  border: 1px solid gray;
+  height: 50px;
+}
+.history-list table td {
+  vertical-align: middle;
+}

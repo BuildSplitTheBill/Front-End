@@ -5,6 +5,7 @@ import { Route, NavLink, withRouter } from "react-router-dom";
 import HomeView from "../src/views/HomeView";
 import FriendsView from "./views/FriendsView";
 import BillsView from "./views/BillsView";
+import HistoryView from "./views/HistoryView";
 
 import AddBillForm from "./components/AddBillForm";
 import SettleBalances from "./components/SettleBalances";
@@ -17,12 +18,12 @@ class App extends Component {
       <div className="App">
         <div className="nav-container">
           <nav>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/friends">Friends</NavLink>
-            <NavLink to="/bills">Bills</NavLink>
-            <NavLink to="/add-bill-form">Add a Bill</NavLink>
-            <NavLink to="/settle-balances">Settle Up</NavLink>
-            <NavLink to="/History">History</NavLink>
+            <NavLink to="/:id">Home</NavLink>
+            <NavLink to="/friends/:id">Friends</NavLink>
+            <NavLink to="/bills/:id">Bills</NavLink>
+            <NavLink to="/add-bill-form/:id">Add a Bill</NavLink>
+            <NavLink to="/settle-balances/:id">Settle Up</NavLink>
+            <NavLink to="/history/:id">History</NavLink>
           </nav>
         </div>
 
@@ -41,6 +42,8 @@ class App extends Component {
           path="/settle-balances"
           render={props => <SettleBalances {...props} />}
         />
+
+        <Route path="/history" render={props => <HistoryView {...props} />} />
       </div>
     );
   }
