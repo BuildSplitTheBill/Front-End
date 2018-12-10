@@ -1,0 +1,48 @@
+.bills-page {
+  .flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+
+  .balances-bar {
+    width: 100%;
+    padding: 10px 0;
+    background: rgba(206, 236, 246, 0.877);
+    margin-top: 1px;
+    border: 1px solid black;
+    .flex;
+    .totals {
+      width: 33.33%;
+    }
+  }
+
+  .bills-list {
+    width: 75%;
+    border: 1px solid black;
+    margin: 20px 0;
+
+    h2 {
+      width: 100%;
+      background: red;
+      color: white;
+      padding: 10px;
+    }
+
+    table {
+      font-size: 1.6rem;
+      width: 100%;
+
+      tr {
+        border: 1px solid gray;
+        height: 50px;
+      }
+      td {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .lighter-text {
+    color: gray;
+    font-size: 1.2rem;
+  }
+}

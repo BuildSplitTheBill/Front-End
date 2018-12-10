@@ -4,6 +4,7 @@ import { Route, NavLink, withRouter } from "react-router-dom";
 
 import HomeView from "../src/views/HomeView";
 import FriendsView from "./views/FriendsView";
+import BillsView from "./views/BillsView";
 
 import "./css/index.css";
 
@@ -25,6 +26,8 @@ class App extends Component {
         <Route exact path="/" render={props => <HomeView {...props} />} />
 
         <Route path="/friends" render={props => <FriendsView {...props} />} />
+
+        <Route path="/bills" render={props => <BillsView {...props} />} />
       </div>
     );
   }
