@@ -82,8 +82,11 @@ const Authenticate = App =>
 
     logOut = ev => {
       ev.preventDefault();
+
       localStorage.removeItem("username");
       localStorage.removeItem("password");
+      localStorage.removeItem("email");
+
       this.setState({
         loggedIn: false
       });

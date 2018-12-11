@@ -14,6 +14,12 @@
 }
 .App h2 {
   font-size: 2.8rem;
+  padding: 10px;
+  background: #3fc33fd8;
+  color: white;
+  font-weight: bold;
+  border: 1px solid black;
+  box-shadow: -1px 1px 1px black;
 }
 .App h3 {
   font-size: 2.4rem;
@@ -34,6 +40,10 @@
 .App .red {
   color: red;
 }
+.App .lighter-text {
+  color: gray;
+  font-size: 1.2rem;
+}
 .App .green-header {
   background: #3fc33fd8;
   color: white;
@@ -48,29 +58,26 @@
 }
 .App button {
   cursor: pointer;
-}
-.App .pay-btn {
-  padding: 7px 15px;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: bold;
-  background: red;
-  color: white;
+  padding: 7px 15px;
+  margin-left: 25px;
   border: 1px solid black;
   border-radius: 3px;
   box-shadow: -1px 1px 1px black;
-  margin-left: 15px;
 }
-.App .lighter-text {
-  color: gray;
-  font-size: 1.2rem;
-}
-.App h2 {
-  padding: 10px;
-  background: #3fc33fd8;
+.App .pay-btn,
+.App .pay-all-btn {
+  background: red;
   color: white;
-  font-weight: bold;
-  border: 1px solid black;
-  box-shadow: -1px 1px 1px black;
+}
+.App .pay-all-btn {
+  font-size: 2rem;
+  margin: 0;
+}
+.App .view-btn {
+  background: lightgoldenrodyellow;
+  margin-right: 10px;
 }
 .nav-container {
   display: flex;
@@ -172,23 +179,10 @@ form .form-input input {
   box-shadow: -1px 1px 1px black;
 }
 form button {
+  margin-left: 5px;
   background: rgba(0, 0, 128, 0.705);
   color: white;
-  font-size: 1.6rem;
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: 1px solid black;
-  text-align: center;
-  cursor: pointer;
-  width: 100px;
-  margin-left: 5px;
-  box-shadow: -1px 1px 1px black;
   font-weight: bold;
-}
-form button:hover {
-  background: white;
-  color: rgba(0, 0, 128, 0.705);
-  border: 2px solid rgba(0, 0, 128, 0.705);
 }
 .friends-page {
   width: 70%;
@@ -256,7 +250,7 @@ form button:hover {
   width: 33.33%;
 }
 .bills-page .bills-list {
-  width: 75%;
+  width: 95%;
   border: 1px solid black;
   margin: 20px 0;
 }
@@ -286,6 +280,17 @@ form button:hover {
 }
 .bills-page .bills-list table td a:hover {
   font-size: 2rem;
+}
+.bills-page .bills-list table .date {
+  width: 7%;
+  padding-left: 10px;
+}
+.bills-page .bills-list table .description {
+  width: 38%;
+}
+.bills-page .bills-list table .right-column {
+  width: 35%;
+  text-align: right;
 }
 .bill-page {
   width: 70%;
@@ -319,16 +324,6 @@ form button:hover {
   border: 1px solid black;
   border-radius: 3px;
   box-shadow: -1px 1px 1px black;
-}
-.bill-page button,
-.bill-page .delete-btn {
-  width: 160px;
-  padding: 10px 0;
-  margin-top: 20px;
-  margin-right: 20px;
-}
-.bill-page .delete-btn {
-  background: red;
 }
 .add-bill-page {
   width: 70%;
