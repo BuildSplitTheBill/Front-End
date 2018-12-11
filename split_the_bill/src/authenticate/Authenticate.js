@@ -8,6 +8,7 @@ const Authenticate = App =>
     constructor() {
       super();
       this.state = {
+        name: "",
         username: "",
         password: "",
         email: "",
@@ -24,6 +25,12 @@ const Authenticate = App =>
         });
       }
     }
+
+    name = ev => {
+      this.setState({
+        name: ev.target.value
+      });
+    };
 
     usernameInput = ev => {
       this.setState({
@@ -96,16 +103,16 @@ const Authenticate = App =>
       if (this.state.loggedIn === false && this.state.registration === false) {
         return (
           <LoginPage
-            login={this.login}
             usernameInput={this.usernameInput}
             passwordInput={this.passwordInput}
-            emailInput={this.emailInput}
+            login={this.login}
             signUp={this.signUp}
           />
         );
       } else if (this.state.registration === true) {
         return (
           <Registration
+            name={this.name}
             usernameInput={this.usernameInput}
             passwordInput={this.passwordInput}
             emailInput={this.emailInput}

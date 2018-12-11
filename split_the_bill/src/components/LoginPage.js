@@ -6,9 +6,19 @@ const LoginPage = props => {
     <div className="login-page">
       <form onSubmit={props.login}>
         <p>Username: </p>
-        <input required type="text" onChange={props.usernameInput} />
+        <input
+          required
+          type="text"
+          name="username"
+          onChange={props.usernameInput}
+        />
         <p>Password: </p>
-        <input required type="text" onChange={props.passwordInput} />
+        <input
+          required
+          type="text"
+          name="password"
+          onChange={props.passwordInput}
+        />
         <button>Login</button>
         <button onClick={props.signUp}>Sign Up</button>
       </form>
