@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Route, NavLink, withRouter } from "react-router-dom";
 
+import Authenticate from "./authenticate/Authenticate";
+
 import HomeView from "../src/views/HomeView";
 import FriendsView from "./views/FriendsView";
 import BillsView from "./views/BillsView";
@@ -19,10 +21,13 @@ class App extends Component {
         <div className="nav-container">
           <nav>
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/friends/">Friends</NavLink>
-            <NavLink to="/bills/">Bills</NavLink>
-            <NavLink to="/add-bill-form/">Add a Bill</NavLink>
-            <NavLink to="/history/">History</NavLink>
+            <NavLink to="/friends">Friends</NavLink>
+            <NavLink to="/bills">Bills</NavLink>
+            <NavLink to="/add-bill-form">Add a Bill</NavLink>
+            <NavLink to="/history">History</NavLink>
+            <NavLink to="/" onClick={this.props.logOut}>
+              Log Out
+            </NavLink>
           </nav>
         </div>
 
@@ -44,4 +49,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Authenticate(App);

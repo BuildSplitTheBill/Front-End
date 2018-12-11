@@ -1,4 +1,5 @@
 .DS_STORE
+node_modules
 scripts/flow/*/.flowconfig
 *~
 *.pyc
@@ -18,5 +19,6 @@ chrome-user-data
 *.sublime-workspace
 .idea
 *.iml
+.vscode
 *.swp
 *.swo
