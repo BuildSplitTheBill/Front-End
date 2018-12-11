@@ -1,35 +1,63 @@
 import React from "react";
 
-const Registration = props => {
-  return (
-    <div className="registration-page">
-      <form onSubmit={props.register}>
-        <p>Name: </p>
-        <input required type="text" name="name" onChange={props.firstName} />
+class Registration extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      name: "",
+      username: "",
+      password: "",
+      email: "",
+      loggedIn: false,
+      registration: false
+    };
+  }
 
-        <p>Username: </p>
-        <input
-          required
-          type="text"
-          name="username"
-          onChange={props.usernameInput}
-        />
+  render() {
+    return (
+      <div className="registration-page">
+        <form onSubmit={this.props.userRegistration}>
+          <label>Name: </label>
+          <input
+            required
+            type="text"
+            name="name"
+            onChange={this.props.handleChange}
+            value={this.state.name}
+          />
 
-        <p>Email: </p>
-        <input required type="email" name="email" onChange={props.emailInput} />
+          <label>Username: </label>
+          <input
+            required
+            type="text"
+            name="username"
+            onChange={this.props.handleChange}
+            value={this.state.username}
+          />
 
-        <p>Password: </p>
-        <input
-          required
-          type="text"
-          name="password"
-          onChange={props.passwordInput}
-        />
+          <label>Email: </label>
+          <input
+            required
+            type="email"
+            name="email"
+            onChange={this.props.handleChange}
+            value={this.state.email}
+          />
 
-        <button>Register</button>
-      </form>
-    </div>
-  );
-};
+          <label>Password: </label>
+          <input
+            required
+            type="password"
+            name="password"
+            onChange={this.props.handleChange}
+            value={this.state.password}
+          />
+
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    );
+  }
+}
 
 export default Registration;

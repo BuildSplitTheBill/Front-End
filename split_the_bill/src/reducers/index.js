@@ -1,4 +1,4 @@
 import { combineReducers } from "redux";
-import friendsReducer from "./friendsReducer";
+import credentialsReducer from "./credentialsReducer";
 
-export default combineReducers({ friendsReducer });
+export default combineReducers({ credentialsReducer });

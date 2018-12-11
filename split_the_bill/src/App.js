@@ -1,21 +1,44 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Route, NavLink, withRouter } from "react-router-dom";
-
-import Authenticate from "./authenticate/Authenticate";
+import {
+  userLogin,
+  userRegistration,
+  userLogout
+} from "./actions/credentialsActions";
+import axios from "axios";
 
 import HomeView from "../src/views/HomeView";
 import FriendsView from "./views/FriendsView";
 import BillsView from "./views/BillsView";
 import HistoryView from "./views/HistoryView";
 
+import LoginPage from "./components/LoginPage";
 import AddBillForm from "./components/AddBillForm";
 import BillPage from "./components/BillPage";
 
 import "./css/index.css";
 
 class App extends Component {
+  // componentDidMount() {
+  //   axios
+  //     .get("https://split-the-bill-backend.herokuapp.com/")
+  //     .then(res => console.log(res))
+  //     .catch(err => console.log(err));
+  // }
+
   render() {
+    if (!this.props.loggedIn) {
+      return (
+        <LoginPage
+          handleChange={this.handleChange}
+          username={this.props.username}
+          password={this.props.password}
+          userLogin={this.props.userLogin}
+        />
+      );
+    }
+
     return (
       <div className="App">
         <div className="nav-container">
@@ -49,4 +72,13 @@ class App extends Component {
   }
 }
 
-export default Authenticate(App);
+const mapStateToProps = state => ({
+  loggedIn: state.credentialsReducer.loggedIn
+});
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { userLogin, userRegistration, userLogout }
+  )(App)
+);

@@ -1,4 +1,8 @@
-// import { combineActions } from "redux-actions";
-// import friendsActions from "./friendsActions";
+import { combineActions } from "redux-actions";
+import { userLogin, userRegistration, userLogout } from "./credentialsActions";
 
-// export default combineActions({ friendsActions });
+export default combineActions({
+  userLogin,
+  userRegistration,
+  userLogout
+});
