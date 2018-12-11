@@ -272,11 +272,63 @@ form button:hover {
   background: white;
 }
 .bills-page .bills-list table tr {
+  width: 100%;
   border: 1px solid gray;
   height: 50px;
 }
 .bills-page .bills-list table td {
   vertical-align: middle;
+}
+.bills-page .bills-list table td a,
+.bills-page .bills-list table td a:visited {
+  text-decoration: none;
+  color: black;
+}
+.bills-page .bills-list table td a:hover {
+  font-size: 2rem;
+}
+.bill-page {
+  width: 70%;
+  margin: 20px auto;
+}
+.bill-page form {
+  width: 70%;
+  margin: 30px auto;
+  padding: 20px;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: -1px 1px 1px black;
+  justify-content: flex-end;
+  background: white;
+}
+.bill-page form .form-input {
+  justify-content: flex-end;
+  width: 100%;
+}
+.bill-page form .form-input p {
+  font-size: 1.8rem;
+}
+.bill-page form .form-input input {
+  width: 70%;
+}
+.bill-page form .form-input select {
+  width: 70%;
+  padding-left: 40px;
+  font-size: 1.6rem;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: -1px 1px 1px black;
+}
+.bill-page button,
+.bill-page .delete-btn {
+  width: 160px;
+  padding: 10px 0;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.bill-page .delete-btn {
+  background: red;
 }
 .add-bill-page {
   width: 70%;

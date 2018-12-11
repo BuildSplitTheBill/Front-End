@@ -16,6 +16,8 @@ const BalancesDetails = props => {
         </div>
       </div>
 
+      <button className="pay-btn">Pay All</button>
+
       <div className="balances-column">
         <h3 className="green-header">You Are Owed</h3>
         <div className="list you-are-owed">

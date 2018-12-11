@@ -8,6 +8,7 @@ import BillsView from "./views/BillsView";
 import HistoryView from "./views/HistoryView";
 
 import AddBillForm from "./components/AddBillForm";
+import BillPage from "./components/BillPage";
 
 import "./css/index.css";
 
@@ -29,7 +30,8 @@ class App extends Component {
 
         <Route path="/friends" render={props => <FriendsView {...props} />} />
 
-        <Route path="/bills" render={props => <BillsView {...props} />} />
+        <Route exact path="/bills" render={props => <BillsView {...props} />} />
+        <Route path="/bills/bill" render={props => <BillPage {...props} />} />
 
         <Route
           path="/add-bill-form"

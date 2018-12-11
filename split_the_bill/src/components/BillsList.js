@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const BillsList = props => {
   return (
@@ -7,7 +8,9 @@ const BillsList = props => {
       <table>
         <tr>
           <td>7/3/18</td>
-          <td>Chicago Hotel</td>
+          <td>
+            <Link to="/bills/bill">Chicago Hotel</Link>
+          </td>
           <td>
             <span className="lighter-text">Jim Jolly paid </span> $65.30
           </td>
