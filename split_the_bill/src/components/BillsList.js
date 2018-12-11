@@ -13,7 +13,8 @@ const BillsList = props => {
           </td>
           <td>
             <span className="lighter-text">Jim lent you </span>
-            $32.65
+            <span className="red">$32.65</span>{" "}
+            <button className="pay-btn">Pay</button>
           </td>
         </tr>
         <tr>
@@ -24,8 +25,8 @@ const BillsList = props => {
             $265.30
           </td>
           <td>
-            <span className="lighter-text">Crhis Mowry owes you </span>
-            $132.65
+            <span className="lighter-text">Crhis Mowry owes you </span>{" "}
+            <span className="green">$132.65</span>
           </td>
         </tr>
       </table>

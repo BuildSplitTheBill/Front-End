@@ -3,6 +3,7 @@ import React from "react";
 const AddBillForm = props => {
   return (
     <div className="add-bill-page">
+      <h2 className="h2-header">Add a New Bill</h2>
       <div className="form-container">
         <form>
           <div className="form-input">

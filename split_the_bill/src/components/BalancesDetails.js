@@ -9,7 +9,8 @@ const BalancesDetails = props => {
         <div className="list you-owe">
           <ul>
             <li>
-              Jim Jolly: <span className="red">$32.65</span>
+              Jim Jolly: <span className="red">$32.65</span>{" "}
+              <button className="pay-btn">Pay</button>
             </li>
           </ul>
         </div>

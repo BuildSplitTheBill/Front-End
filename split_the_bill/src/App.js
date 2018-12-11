@@ -8,7 +8,6 @@ import BillsView from "./views/BillsView";
 import HistoryView from "./views/HistoryView";
 
 import AddBillForm from "./components/AddBillForm";
-import SettleBalances from "./components/SettleBalances";
 
 import "./css/index.css";
 
@@ -18,12 +17,11 @@ class App extends Component {
       <div className="App">
         <div className="nav-container">
           <nav>
-            <NavLink to="/:id">Home</NavLink>
-            <NavLink to="/friends/:id">Friends</NavLink>
-            <NavLink to="/bills/:id">Bills</NavLink>
-            <NavLink to="/add-bill-form/:id">Add a Bill</NavLink>
-            <NavLink to="/settle-balances/:id">Settle Up</NavLink>
-            <NavLink to="/history/:id">History</NavLink>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/friends/">Friends</NavLink>
+            <NavLink to="/bills/">Bills</NavLink>
+            <NavLink to="/add-bill-form/">Add a Bill</NavLink>
+            <NavLink to="/history/">History</NavLink>
           </nav>
         </div>
 
@@ -36,11 +34,6 @@ class App extends Component {
         <Route
           path="/add-bill-form"
           render={props => <AddBillForm {...props} />}
-        />
-
-        <Route
-          path="/settle-balances"
-          render={props => <SettleBalances {...props} />}
         />
 
         <Route path="/history" render={props => <HistoryView {...props} />} />

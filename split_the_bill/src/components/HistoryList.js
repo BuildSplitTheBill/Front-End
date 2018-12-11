@@ -9,15 +9,16 @@ const HistoryList = props => {
           <td>7/17/18</td>
           <td>Chicago Hotel</td>
           <td>
-            <span className="lighter-text">You paid Jim Jolly </span> $65.30
+            <span>You paid Jim Jolly </span>{" "}
+            <span className="red"> $65.30</span>
           </td>
         </tr>
         <tr>
           <td>10/13/18</td>
           <td>Southwest ticket to Las Vegas</td>
           <td>
-            <span className="lighter-text">Crhis Mowry paid you</span>
-            $132.65
+            <span>Chris Mowry paid you </span>
+            <span className="green"> $132.65</span>
           </td>
         </tr>
       </table>

@@ -3,7 +3,7 @@ import React from "react";
 const AddFriendForm = props => {
   return (
     <div className="form-container">
-      <h2>Add New Friend</h2>
+      <h2 className="h2-header">Add New Friend</h2>
       <form>
         <div className="form-input">
           <p>Name: &nbsp;</p>
