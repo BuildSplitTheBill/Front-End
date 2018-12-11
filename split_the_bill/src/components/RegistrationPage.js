@@ -1,19 +1,19 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
 
-const LoginPage = props => {
+const Registration = props => {
   return (
-    <div className="login-page">
-      <form onSubmit={props.login}>
+    <div className="registration-page">
+      <form onSubmit={props.register}>
         <p>Username: </p>
         <input required type="text" onChange={props.usernameInput} />
         <p>Password: </p>
         <input required type="text" onChange={props.passwordInput} />
-        <button>Login</button>
-        <button onClick={props.signUp}>Sign Up</button>
+        <p>Email: </p>
+        <input required type="email" onChange={props.emailInput} />
+        <button>Register</button>
       </form>
     </div>
   );
 };
 
-export default LoginPage;
+export default Registration;
