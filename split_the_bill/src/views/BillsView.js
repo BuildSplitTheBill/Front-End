@@ -4,10 +4,12 @@ import BillsList from "../components/BillsList";
 
 const BillsView = props => {
   return (
-    <div className="bills-page">
+    <React.Fragment>
       <BalanceBar />
-      <BillsList />
-    </div>
+      <div className="bills-page">
+        <BillsList />
+      </div>
+    </React.Fragment>
   );
 };
 

@@ -1,11 +1,7 @@
 .App {
   text-align: center;
-  max-width: 1024px;
   margin: 0 auto;
-  border: 2px solid black;
-  border-radius: 3px;
-  box-shadow: -1px 1px 2px black;
-  background: whitesmoke;
+  background: rgb(233, 233, 233);
   color: black;
   height: 100vh;
 
@@ -15,9 +11,8 @@
   h2 {
     font-size: 2.8rem;
     padding: 10px;
-    background: @main-color;
+    background: black;
     color: white;
-    font-weight: bold;
     border: 1px solid black;
     box-shadow: -1px 1px 1px black;
   }
@@ -41,6 +36,10 @@
     color: green;
   }
 
+  .nav-green {
+    color: rgb(25, 226, 25);
+  }
+
   .red {
     color: red;
   }
@@ -52,14 +51,14 @@
 
   // Header
   .green-header {
-    background: @main-color;
+    background: rgba(0, 128, 0, 0.767);
     color: white;
     width: 100%;
     padding: 5px 0;
   }
 
   .red-header {
-    background: red;
+    background: rgba(255, 0, 0, 0.746);
     color: white;
     width: 100%;
     padding: 5px 0;
@@ -69,18 +68,32 @@
   button {
     cursor: pointer;
     font-size: 1.6rem;
-    font-weight: bold;
     padding: 7px 15px;
     margin-left: 25px;
     border: 1px solid black;
     border-radius: 3px;
     box-shadow: -1px 1px 1px black;
+    background: @button-color;
+    color: white;
+  }
+
+  button:hover {
+    color: @button-color;
+    font-weight: bold;
+    background: white;
   }
 
   .pay-btn,
   .pay-all-btn {
-    background: red;
+    background: rgba(255, 0, 0, 0.746);
     color: white;
+    font-weight: bold;
+  }
+
+  .pay-btn:hover,
+  .pay-all-btn:hover {
+    color: rgba(255, 0, 0, 0.746);
+    background: white;
   }
 
   .pay-all-btn {
@@ -89,7 +102,28 @@
   }
 
   .view-btn {
-    background: lightgoldenrodyellow;
+    background: rgba(250, 250, 210, 0.363);
     margin-right: 10px;
+    color: black;
+  }
+
+  .view-btn:hover {
+    color: white;
+    background: black;
+  }
+
+  // Balances Bar
+  .balances-bar {
+    width: 100%;
+    padding: 10px 0;
+    background: black;
+    color: white;
+    margin-top: 1px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    .flex;
+    .totals {
+      width: 33.33%;
+    }
   }
 }

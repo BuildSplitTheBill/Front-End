@@ -17,7 +17,7 @@ class LoginPage extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  submitHandler = e => {
+  userLogin = e => {
     e.preventDefault();
     this.props.userLogin({
       username: this.state.username,
@@ -28,28 +28,34 @@ class LoginPage extends React.Component {
   render() {
     return (
       <div className="login-page">
-        <form onSubmit={e => this.submitHandler(e)}>
-          <label>Username: </label>
-          <input
-            required
-            type="text"
-            name="username"
-            onChange={this.handleChange}
-            value={this.state.username}
-          />
-          <label>Password: </label>
-          <input
-            required
-            type="password"
-            name="password"
-            onChange={this.handleChange}
-            value={this.state.password}
-          />
+        <form onSubmit={e => this.userLogin(e)}>
+          <div className="form-input">
+            <input
+              required
+              type="text"
+              name="username"
+              placeholder="username"
+              onChange={this.handleChange}
+              value={this.state.username}
+            />
+          </div>
+
+          <div className="form-input">
+            <input
+              required
+              type="password"
+              name="password"
+              placeholder="password"
+              onChange={this.handleChange}
+              value={this.state.password}
+            />
+          </div>
+
           <button>Login</button>
+          <Link to="/signup">
+            <button className="signup">Sign Up</button>
+          </Link>
         </form>
-        <Link to="/signup">
-          <button>Sign Up</button>
-        </Link>
       </div>
     );
   }

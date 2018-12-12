@@ -14,6 +14,7 @@ import BillsView from "./views/BillsView";
 import HistoryView from "./views/HistoryView";
 
 import LoginPage from "./components/LoginPage";
+import RegistrationPage from "./components/RegistrationPage";
 import AddBillForm from "./components/AddBillForm";
 import BillPage from "./components/BillPage";
 
@@ -30,12 +31,25 @@ class App extends Component {
   render() {
     if (!this.props.loggedIn) {
       return (
-        <LoginPage
-          handleChange={this.handleChange}
-          username={this.props.username}
-          password={this.props.password}
-          userLogin={this.props.userLogin}
-        />
+        <React.Fragment>
+          <Route
+            exact
+            path="/"
+            render={props => (
+              <LoginPage {...props} userLogin={this.props.userLogin} />
+            )}
+          />
+
+          <Route
+            path="/signup"
+            render={props => (
+              <RegistrationPage
+                {...props}
+                userRegistration={this.props.userRegistration}
+              />
+            )}
+          />
+        </React.Fragment>
       );
     }
 
@@ -48,7 +62,7 @@ class App extends Component {
             <NavLink to="/bills">Bills</NavLink>
             <NavLink to="/add-bill-form">Add a Bill</NavLink>
             <NavLink to="/history">History</NavLink>
-            <NavLink to="/" onClick={this.props.logOut}>
+            <NavLink to="/" onClick={() => this.props.userLogout()}>
               Log Out
             </NavLink>
           </nav>

@@ -1,6 +1,6 @@
 .nav-container {
   .flex(@justify: flex-end);
-  background: @main-color;
+  background: @secondary-color;
   padding: 15px;
   border-bottom: 1px solid black;
   box-shadow: -1px 1px 1px gray;
@@ -10,13 +10,17 @@ nav {
   a,
   a:visited {
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.6rem;
+    background: whitesmoke;
     color: black;
-    background: white;
-    border: 1px solid black;
+    border: 1px solid gray;
     box-shadow: -1px 1px 1px black;
-    border-radius: 5px;
-    padding: 5px 10px;
+    border-radius: 3px;
+    padding: 8px 13px;
     margin-right: 10px;
+  }
+  a:hover {
+    color: white;
+    background: black;
   }
 }

@@ -5,10 +5,12 @@ import BalancesDetails from "../components/BalancesDetails";
 
 const BalancesView = props => {
   return (
-    <div className="balances-page">
+    <React.Fragment>
       <BalanceBar />
-      <BalancesDetails />
-    </div>
+      <div className="balances-page">
+        <BalancesDetails />
+      </div>
+    </React.Fragment>
   );
 };
 
