@@ -7,27 +7,27 @@ const AddBillForm = props => {
       <div className="form-container">
         <form>
           <div className="form-input">
-            <p>Description: &nbsp;</p>
+            <h4>Description: &nbsp;</h4>
             <input type="text" name="name" />
           </div>
 
           <div className="form-input">
-            <p>Date: &nbsp;</p>
+            <h4>Date: &nbsp;</h4>
             <input type="date" name="date" />
           </div>
 
           <div className="form-input">
-            <p>Amount: &nbsp;</p>
+            <h4>Amount: &nbsp;</h4>
             <input type="number" name="amount" />
           </div>
 
           <div className="form-input">
-            <p>People: &nbsp;</p>
+            <h4>People: &nbsp;</h4>
             <input type="text" name="people" />
           </div>
 
           <div className="form-input">
-            <p>Who Paid: &nbsp;</p>
+            <h4>Who Paid: &nbsp;</h4>
             <select>
               <option>Tommy Huynh</option>
               <option>Jim Jolly</option>

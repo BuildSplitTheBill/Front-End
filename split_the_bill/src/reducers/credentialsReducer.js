@@ -7,7 +7,9 @@ import {
   REGISTER_FAIL,
   LOGOUT_START,
   LOGOUT_SUCCESS,
-  LOGOUT_FAIL
+  LOGOUT_FAIL,
+  SET_TOKEN_OPTIONS,
+  INITIAL_STATE_FETCHED
 } from "../actions/credentialsActions";
 
 const initialState = {
@@ -15,9 +17,12 @@ const initialState = {
   username: "",
   password: "",
   email: "",
+  options: "",
+  fetchingInitialState: true,
   loggingIn: false,
   loggedIn: false,
   loggingOut: false,
+  logginFail: false,
   error: null
 };
 
@@ -96,6 +101,18 @@ const credentialsReducer = (state = initialState, action) => {
         ...state,
         loggingOut: false,
         error: action.payload
+      };
+
+    case SET_TOKEN_OPTIONS:
+      return {
+        ...state,
+        options: action.payload
+      };
+
+    case INITIAL_STATE_FETCHED:
+      return {
+        ...state,
+        fetchingInitialState: false
       };
 
     default:

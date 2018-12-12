@@ -11,14 +11,15 @@ export const REGISTER_FAIL = "REGISTER_FAIL";
 export const LOGOUT_START = "LOGOUT_START";
 export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
 export const LOGOUT_FAIL = "LOGOUT_FAIL";
+export const SET_TOKEN_OPTIONS = "SET_TOKEN_OPTIONS";
+export const INITIAL_STATE_FETCHED = "INITIAL_STATE_FETCHED";
 
 export const userLogin = data => dispatch => {
   dispatch({ type: LOGIN_START });
-  console.log("Login start");
   axios
     .post("https://split-the-bill-backend.herokuapp.com/login", data)
     .then(res => {
-      console.log("then", res);
+      localStorage.setItem("token", res.data.token);
       dispatch({
         type: LOGIN_SUCCESS,
         payload: res.data
@@ -40,8 +41,40 @@ export const userRegistration = data => dispatch => {
 
 export const userLogout = () => dispatch => {
   dispatch({ type: LOGOUT_START });
-  axios
-    .post("https://split-the-bill-backend.herokuapp.com/logout")
-    .then(res => dispatch({ type: LOGOUT_SUCCESS, payload: res.data }))
-    .catch(err => dispatch({ type: LOGOUT_FAIL, payload: err }));
+
+  localStorage.removeItem("token");
+
+  dispatch({ type: LOGOUT_SUCCESS });
+  // set logged in to false
+  // push logged out page to history
+
+  // axios
+  //   .post("https://split-the-bill-backend.herokuapp.com/logout")
+  //   .then(res => dispatch({ type: LOGOUT_SUCCESS, payload: res.data }))
+  //   .catch(err => dispatch({ type: LOGOUT_FAIL, payload: err }));
 };
+
+export const getToken = () => dispatch => {
+  const token = localStorage.getItem("token");
+  const options = {
+    headers: {
+      Authorization: token
+    }
+  };
+
+  dispatch({ type: SET_TOKEN_OPTIONS, payload: options });
+};
+
+export const setInitialStateFetched = () => ({
+  type: INITIAL_STATE_FETCHED
+});
+
+export const getUsers = () => (dispatch, getState) => {
+  const state = getState();
+  const options = state.credentialsActions.options;
+};
+
+export const setLoggedInToTrue = () => ({
+  type: LOGIN_SUCCESS,
+  payload: undefined
+});

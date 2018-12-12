@@ -177,7 +177,7 @@
   justify-content: flex-end;
   align-items: center;
   flex-direction: row;
-  background: rgba(218, 238, 232, 0.877);
+  background: #555d68;
   padding: 15px;
   border-bottom: 1px solid black;
   box-shadow: -1px 1px 1px gray;
@@ -325,7 +325,8 @@ form .form-input select {
   font-size: 2rem;
   text-align: center;
   font-weight: bold;
-  background: rgba(218, 238, 232, 0.877);
+  background: #555d68;
+  color: white;
 }
 .friends-page .friends-list table td {
   font-size: 1.6rem;
@@ -390,6 +391,7 @@ form .form-input select {
   width: 70%;
   margin: 30px auto;
   padding: 20px;
+  padding-bottom: 50px;
   flex-wrap: wrap;
   border: 1px solid black;
   border-radius: 3px;
@@ -397,27 +399,23 @@ form .form-input select {
   justify-content: flex-end;
   background: white;
 }
-.bill-page form .form-input {
-  justify-content: flex-end;
-  width: 100%;
+.bill-page form h4 {
+  margin-bottom: 10px;
 }
-.bill-page form .form-input p {
-  font-size: 1.8rem;
-}
-.bill-page form .form-input input {
-  width: 70%;
-}
-.bill-page form .form-input select {
-  width: 70%;
-  padding-left: 40px;
-  font-size: 1.6rem;
-  border: 1px solid black;
-  border-radius: 3px;
-  box-shadow: -1px 1px 1px black;
+.bill-page form input {
+  margin-bottom: 25px;
+  padding-left: 20px;
 }
 .add-bill-page {
   width: 70%;
   margin: 20px auto;
+}
+.add-bill-page h4 {
+  margin-bottom: 10px;
+}
+.add-bill-page input {
+  margin-bottom: 25px;
+  padding-left: 20px;
 }
 .add-bill-page button {
   width: 200px;

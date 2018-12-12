@@ -4,8 +4,19 @@ import { Route, NavLink, withRouter } from "react-router-dom";
 import {
   userLogin,
   userRegistration,
-  userLogout
+  userLogout,
+  getToken,
+  setInitialStateFetched,
+  setLoggedInToTrue
 } from "./actions/credentialsActions";
+
+import {
+  fetchFriends
+  // addFriend,
+} from "./actions/friendsActions";
+
+import { fetchHomePageData } from "./actions/dataAction";
+
 import axios from "axios";
 
 import HomeView from "../src/views/HomeView";
@@ -21,14 +32,38 @@ import BillPage from "./components/BillPage";
 import "./css/index.css";
 
 class App extends Component {
-  // componentDidMount() {
-  //   axios
-  //     .get("https://split-the-bill-backend.herokuapp.com/")
-  //     .then(res => console.log(res))
-  //     .catch(err => console.log(err));
-  // }
+  componentDidMount() {
+    const { getToken, setInitialStateFetched, setLoggedInToTrue } = this.props;
+    getToken();
+
+    const token = localStorage.getItem("token");
+    const options = {
+      headers: {
+        Authorization: token
+      }
+    };
+
+    axios
+      .get("https://split-the-bill-backend.herokuapp.com/", options)
+      .then(res => {
+        setInitialStateFetched();
+        setLoggedInToTrue();
+        console.log(res);
+        this.props.fetchHomePageData(res.data);
+      })
+      .catch(err => {
+        setInitialStateFetched();
+        console.log(err);
+      });
+  }
 
   render() {
+    const { fetchingInitialState } = this.props;
+
+    if (fetchingInitialState) {
+      return <h1>Loading...</h1>;
+    }
+
     if (!this.props.loggedIn) {
       return (
         <React.Fragment>
@@ -36,7 +71,11 @@ class App extends Component {
             exact
             path="/"
             render={props => (
-              <LoginPage {...props} userLogin={this.props.userLogin} />
+              <LoginPage
+                {...props}
+                userLogin={this.props.userLogin}
+                fetchFriends={this.props.fetchFriends}
+              />
             )}
           />
 
@@ -68,9 +107,23 @@ class App extends Component {
           </nav>
         </div>
 
-        <Route exact path="/" render={props => <HomeView {...props} />} />
+        <Route
+          exact
+          path="/"
+          render={props => <HomeView {...props} data={this.data} />}
+        />
 
-        <Route path="/friends" render={props => <FriendsView {...props} />} />
+        <Route
+          path="/friends"
+          render={props => (
+            <FriendsView
+              {...props}
+              friends={this.props.friends}
+              addFriend={this.props.addFriend}
+              deleteFriend={this.props.deleteFriend}
+            />
+          )}
+        />
 
         <Route exact path="/bills" render={props => <BillsView {...props} />} />
         <Route path="/bills/bill" render={props => <BillPage {...props} />} />
@@ -87,12 +140,25 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  loggedIn: state.credentialsReducer.loggedIn
+  loggedIn: state.credentialsReducer.loggedIn,
+  friends: state.friendsReducer.friends,
+  options: state.credentialsReducer.options,
+  fetchingInitialState: state.credentialsReducer.fetchingInitialState
 });
 
 export default withRouter(
   connect(
     mapStateToProps,
-    { userLogin, userRegistration, userLogout }
+    {
+      userLogin,
+      userRegistration,
+      userLogout,
+      fetchFriends,
+      // addFriend,
+      fetchHomePageData,
+      getToken,
+      setInitialStateFetched,
+      setLoggedInToTrue
+    }
   )(App)
 );
