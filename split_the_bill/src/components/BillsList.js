@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const BillsList = props => {
+  console.log(props)
   console.log('bills', props.bills)
   console.log('billsUserIsOwed', props.bills.billsUserIsOwed)
   console.log('billsUserOwes', props.bills.billsUserOwes)
@@ -36,7 +37,12 @@ const BillsList = props => {
                 <td className="right-column">
                   <span className="lighter-text">{bill.name} lent you </span>
                   <span className="red">${bill.amount}</span>{' '}
-                  <button className="pay-btn">Pay</button>
+                  <button
+                    className="pay-btn"
+                    onClick={() => props.payBill(bill)}
+                  >
+                    Pay
+                  </button>
                 </td>
               </tr>
             ))}
