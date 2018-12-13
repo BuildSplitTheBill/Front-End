@@ -2,7 +2,7 @@ import {
   FETCH_DATA_START,
   FETCH_DATA_SUCCESS,
   FETCH_DATA_FAIL
-} from "../actions/dataAction";
+} from "../actions/dataActions";
 
 const initialState = {
   balancesData: [],
