@@ -68,16 +68,17 @@ class AddBillForm extends Component {
             </div>
 
             {friends.map(({ id, name }) => (
-              <div className="form-input">
-                <label>
-                  {name}
+              <div className="form-checkbox">
                   <input
                     required
                     type="checkbox"
                     name={id}
                     onChange={handleCheckChange}
                     value={amount}
+                    // className="add-bill-checkbox"
                   />
+                <label>
+                  {name}
                 </label>
               </div>
             ))}

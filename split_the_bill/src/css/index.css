@@ -113,6 +113,13 @@
 .App .balance-amount {
   margin-left: 20px;
 }
+.checkbox-reset {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
 .login-page,
 .registration-page {
   width: 80%;
@@ -449,7 +456,11 @@ form .form-input select {
   margin-bottom: 25px;
   padding-left: 20px;
 }
-.add-bill-page button {
+.add-bill-page .form-container .form-checkbox label {
+  font-size: 2rem;
+  padding-left: 30px;
+}
+button {
   width: 200px;
   padding: 10px 0;
   margin-top: 20px;
