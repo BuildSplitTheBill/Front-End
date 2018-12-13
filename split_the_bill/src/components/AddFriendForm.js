@@ -1,24 +1,42 @@
 import React from "react";
 
-const AddFriendForm = props => {
-  return (
-    <div className="form-container">
-      <h2 className="h2-header">Add New Friend</h2>
-      <form className="add-friend-form">
-        <div className="form-input">
-          <p>Name: &nbsp;</p>
-          <input type="text" name="name" />
-        </div>
+class AddFriendForm extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      name: ""
+    };
+  }
 
-        <div className="form-input">
-          <p>Email: &nbsp;</p>
-          <input type="email" name="email" />
-        </div>
+  handleChange = e => {
+    e.preventDefault();
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
-        <button>Add</button>
-      </form>
-    </div>
-  );
-};
+  addFriend = e => {
+    e.preventDefault();
+    this.props.addFriend(this.state);
+
+    this.setState({
+      name: ""
+    });
+  };
+
+  render(props) {
+    return (
+      <div className="form-container">
+        <h2 className="h2-header">Add New Friend</h2>
+        <form className="add-friend-form">
+          <div className="form-input">
+            <p>Name: &nbsp;</p>
+            <input type="text" name="name" />
+          </div>
+
+          <button>Add</button>
+        </form>
+      </div>
+    );
+  }
+}
 
 export default AddFriendForm;

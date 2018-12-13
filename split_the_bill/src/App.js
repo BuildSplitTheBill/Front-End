@@ -10,12 +10,10 @@ import {
   setInitialStateFetched,
   setLoggedInToTrue
 } from "./actions/credentialsActions";
-import {
-  fetchFriends
-  // addFriend,
-} from "./actions/friendsActions";
-import { fetchHomePageData } from "./actions/dataAction";
+import { fetchFriends, addFriend } from "./actions/friendsActions";
+import { fetchHomePageData } from "./actions/dataActions";
 import { fetchBills } from "./actions/billsActions";
+import { fetchUsers } from "./actions/usersActions";
 
 import axios from "axios";
 
@@ -51,6 +49,8 @@ class App extends Component {
         this.props.fetchHomePageData(res.data);
         this.props.fetchFriends(res.data);
         this.props.fetchBills(res.data);
+        this.props.addFriend(res.data);
+        this.props.fetchUsers(res.data);
       })
       .catch(err => {
         setInitialStateFetched();
@@ -126,7 +126,8 @@ class App extends Component {
             <FriendsView
               {...props}
               friends={this.props.friends}
-              // addFriend={this.props.addFriend}
+              addFriend={this.props.addFriend}
+              users={this.props.users}
             />
           )}
         />
@@ -146,10 +147,10 @@ class App extends Component {
 
         <Route
           path="/add-bill-form"
-          render={props => <AddBillForm {...props} />}
+          render={props => (
+            <AddBillForm {...props} friends={this.props.friends} />
+          )}
         />
-
-        {/* <Route path="/history" render={props => <HistoryView {...props} />} /> */}
       </div>
     );
   }
@@ -161,7 +162,8 @@ const mapStateToProps = state => ({
   options: state.credentialsReducer.options,
   fetchingInitialState: state.credentialsReducer.fetchingInitialState,
   balancesData: state.dataReducer.balancesData,
-  bills: state.billsReducer.bills
+  bills: state.billsReducer.bills,
+  users: state.usersReducer.users
 });
 
 export default withRouter(
@@ -172,12 +174,13 @@ export default withRouter(
       userRegistration,
       userLogout,
       fetchFriends,
-      // addFriend,
+      addFriend,
       fetchHomePageData,
       fetchBills,
       getToken,
       setInitialStateFetched,
-      setLoggedInToTrue
+      setLoggedInToTrue,
+      fetchUsers
     }
   )(App)
 );

@@ -6,11 +6,12 @@ import FriendsList from "../components/FriendsList";
 const FriendsView = props => {
   return (
     <div className="friends-page">
-      <AddFriendForm />
-      <FriendsList
+      <AddFriendForm
+        addFriend={props.addFriend}
+        users={props.users}
         friends={props.friends}
-        // addFriend={props.addFriend}
       />
+      <FriendsList friends={props.friends} />
     </div>
   );
 };
