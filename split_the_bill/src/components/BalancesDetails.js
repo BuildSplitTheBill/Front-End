@@ -1,8 +1,6 @@
 import React from "react";
 
 const BalancesDetails = props => {
-  console.log(props.balancesData.obligationsUserIsOwed);
-  console.log(props.balancesData.obligationsUserOwes);
   return (
     <React.Fragment>
       <div className="balances-column">

@@ -8,13 +8,15 @@ export const FETCH_BILLS_FAIL = "FETCH_BILLS_FAIL";
 // export const ADD_BILL_SUCCESS = "ADD_BILL_SUCCESS";
 // export const ADD_BILL_FAIL = "ADD_BILL_FAIL";
 
-export const fetchBILLs = () => dispatch => {
+export const fetchBills = () => (dispatch, getState) => {
+  const state = getState();
+  const options = state.credentialsReducer.options;
+
   dispatch({ type: FETCHING_BILLS });
-  console.log("fetching bills");
+
   axios
-    .get("https://split-the-bill-backend.herokuapp.com/bills")
+    .get("https://split-the-bill-backend.herokuapp.com/bills", options)
     .then(res => {
-      console.log("res", res);
       dispatch({ type: FETCH_BILLS_SUCCESS, payload: res.data });
     })
     .catch(err => {

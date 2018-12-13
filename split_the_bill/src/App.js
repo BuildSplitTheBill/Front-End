@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Route, NavLink, withRouter } from "react-router-dom";
+
 import {
   userLogin,
   userRegistration,
@@ -9,13 +10,12 @@ import {
   setInitialStateFetched,
   setLoggedInToTrue
 } from "./actions/credentialsActions";
-
 import {
   fetchFriends
   // addFriend,
 } from "./actions/friendsActions";
-
 import { fetchHomePageData } from "./actions/dataAction";
+import { fetchBills } from "./actions/billsActions";
 
 import axios from "axios";
 
@@ -50,6 +50,7 @@ class App extends Component {
         setLoggedInToTrue();
         this.props.fetchHomePageData(res.data);
         this.props.fetchFriends(res.data);
+        this.props.fetchBills(res.data);
       })
       .catch(err => {
         setInitialStateFetched();
@@ -134,7 +135,11 @@ class App extends Component {
           exact
           path="/bills"
           render={props => (
-            <BillsView {...props} balancesData={this.props.balancesData} />
+            <BillsView
+              {...props}
+              balancesData={this.props.balancesData}
+              bills={this.props.bills}
+            />
           )}
         />
         <Route path="/bills/bill" render={props => <BillPage {...props} />} />
@@ -155,7 +160,8 @@ const mapStateToProps = state => ({
   friends: state.friendsReducer.friends,
   options: state.credentialsReducer.options,
   fetchingInitialState: state.credentialsReducer.fetchingInitialState,
-  balancesData: state.dataReducer.balancesData
+  balancesData: state.dataReducer.balancesData,
+  bills: state.billsReducer.bills
 });
 
 export default withRouter(
@@ -168,6 +174,7 @@ export default withRouter(
       fetchFriends,
       // addFriend,
       fetchHomePageData,
+      fetchBills,
       getToken,
       setInitialStateFetched,
       setLoggedInToTrue

@@ -7,7 +7,7 @@ const BillsView = props => {
     <React.Fragment>
       <BalanceBar balancesData={props.balancesData} />
       <div className="bills-page">
-        <BillsList />
+        <BillsList bills={props.bills} />
       </div>
     </React.Fragment>
   );
