@@ -9,8 +9,7 @@ const FriendsView = props => {
       <AddFriendForm />
       <FriendsList
         friends={props.friends}
-        addFriend={props.addFriend}
-        deleteFriend={props.deleteFriend}
+        // addFriend={props.addFriend}
       />
     </div>
   );

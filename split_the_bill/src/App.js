@@ -49,6 +49,7 @@ class App extends Component {
         setInitialStateFetched();
         setLoggedInToTrue();
         this.props.fetchHomePageData(res.data);
+        this.props.fetchFriends(res.data);
       })
       .catch(err => {
         setInitialStateFetched();
@@ -124,8 +125,7 @@ class App extends Component {
             <FriendsView
               {...props}
               friends={this.props.friends}
-              addFriend={this.props.addFriend}
-              deleteFriend={this.props.deleteFriend}
+              // addFriend={this.props.addFriend}
             />
           )}
         />

@@ -11,20 +11,12 @@ const FriendsList = props => {
           </tr>
         </thead>
         <tbody>
-          {/* {props.friends.map(friend => (
-            <tr>
+          {props.friends.map(friend => (
+            <tr key={friend.key}>
               <td>{friend.name}</td>
               <td>{friend.email}</td>
             </tr>
-          ))} */}
-          <tr>
-            <td>Jim Jolly</td>
-            <td>jim.jolly@gmail.com</td>
-          </tr>
-          <tr>
-            <td>Chris Mowry</td>
-            <td>chris.mowry@gmail.com</td>
-          </tr>
+          ))}
         </tbody>
       </table>
     </div>

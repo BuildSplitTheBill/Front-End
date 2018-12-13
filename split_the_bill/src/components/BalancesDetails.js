@@ -10,10 +10,10 @@ const BalancesDetails = props => {
 
         <div className="list you-owe">
           <table>
-            {!props.balancesData.obligationsUserOwes
-              ? null
-              : props.balancesData.obligationsUserOwes.map(key => (
-                  <tbody>
+            <tbody>
+              {!props.balancesData.obligationsUserOwes
+                ? null
+                : props.balancesData.obligationsUserOwes.map(key => (
                     <tr key={key.id}>
                       <td>{key.name}</td>
                       <td>
@@ -23,8 +23,8 @@ const BalancesDetails = props => {
                       </td>
                       <button className="pay-btn">Pay All</button>
                     </tr>
-                  </tbody>
-                ))}
+                  ))}
+            </tbody>
           </table>
         </div>
       </div>
@@ -35,10 +35,10 @@ const BalancesDetails = props => {
         <h3 className="green-header">You Are Owed</h3>
         <div className="list you-are-owed">
           <table>
-            {!props.balancesData.obligationsUserIsOwed
-              ? null
-              : props.balancesData.obligationsUserIsOwed.map(key => (
-                  <tbody>
+            <tbody>
+              {!props.balancesData.obligationsUserIsOwed
+                ? null
+                : props.balancesData.obligationsUserIsOwed.map(key => (
                     <tr key={key.id}>
                       <td>{key.name}</td>
                       <td>
@@ -47,8 +47,8 @@ const BalancesDetails = props => {
                         </span>
                       </td>
                     </tr>
-                  </tbody>
-                ))}
+                  ))}
+            </tbody>
           </table>
         </div>
       </div>

@@ -12,13 +12,14 @@ export const FETCH_FRIENDS_FAIL = "FETCH_FRIENDS_FAIL";
 // export const DELETE_FRIEND_SUCCESS = "DELETE_FRIEND_SUCCESS";
 // export const DELETE_FRIEND_FAIL = "DELETE_FETCH_FAIL";
 
-export const fetchFriends = () => dispatch => {
+export const fetchFriends = () => (dispatch, getState) => {
+  const state = getState();
+  const options = state.credentialsReducer.options;
+
   dispatch({ type: FETCHING_FRIENDS });
-  console.log("fetching friends");
   axios
-    .get("https://split-the-bill-backend.herokuapp.com/friends")
+    .get("https://split-the-bill-backend.herokuapp.com/friends", options)
     .then(res => {
-      console.log("res", res);
       dispatch({ type: FETCH_FRIENDS_SUCCESS, payload: res.data });
     })
     .catch(err => {
