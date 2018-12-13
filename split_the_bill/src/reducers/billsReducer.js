@@ -1,10 +1,10 @@
 import {
   FETCHING_BILLS,
   FETCH_BILLS_SUCCESS,
-  FETCH_BILLS_FAIL
-  //   ADD_BILL_START,
-  //   ADD_BILL_SUCCESS,
-  //   ADD_BILL_FAIL,
+  FETCH_BILLS_FAIL,
+  ADD_BILL_START,
+  ADD_BILL_SUCCESS,
+  ADD_BILL_FAIL
 } from "../actions/billsActions";
 
 const initialState = {
@@ -42,27 +42,27 @@ const billsReducer = (state = initialState, action) => {
 
     // Add bills
 
-    // case ADD_BILL_START:
-    //   return {
-    //     ...state,
-    //     isAddingBill: true,
-    //     error: null
-    //   };
+    case ADD_BILL_START:
+      return {
+        ...state,
+        isAddingBill: true,
+        error: null
+      };
 
-    // case ADD_BILL_SUCCESS:
-    //   return {
-    //     ...state,
-    //     isAddingBill: false,
-    //     error: null,
-    //     bills: [...state.bills, action.payload]
-    //   };
+    case ADD_BILL_SUCCESS:
+      return {
+        ...state,
+        isAddingBill: false,
+        error: null,
+        bills: [...state.bills, action.payload]
+      };
 
-    // case ADD_BILL_FAIL:
-    //   return {
-    //     ...state,
-    //     isAddingBill: false,
-    //     error: action.payload
-    //   };
+    case ADD_BILL_FAIL:
+      return {
+        ...state,
+        isAddingBill: false,
+        error: action.payload
+      };
 
     default:
       return state;

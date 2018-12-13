@@ -18,11 +18,11 @@ const BillsList = props => {
                   <td className="date">{bill.date}</td>
                   <td className="description">{bill.description}</td>
                   <td>
-                    <span className="lighter-text">{bill.name} paid </span> $
+                    <span className="lighter-text">You paid </span> $
                     {bill.amount}
                   </td>
                   <td className="right-column">
-                    <span className="lighter-text">{bill.name} lent you </span>
+                    <span className="lighter-text">{bill.name} owes you </span>
                     <span className="green">${bill.amount}</span>{" "}
                     <Link to="/bills/bill">
                       <button className="view-btn">View</button>

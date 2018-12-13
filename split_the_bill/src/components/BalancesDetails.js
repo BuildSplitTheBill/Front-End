@@ -19,7 +19,7 @@ const BalancesDetails = props => {
                           ${key.amount}
                         </span>
                       </td>
-                      <button className="pay-btn">Pay All</button>
+                      <button className="pay-btn">Pay</button>
                     </tr>
                   ))}
             </tbody>

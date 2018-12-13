@@ -12,7 +12,7 @@ import {
 } from "./actions/credentialsActions";
 import { fetchFriends, addFriend } from "./actions/friendsActions";
 import { fetchHomePageData } from "./actions/dataActions";
-import { fetchBills } from "./actions/billsActions";
+import { fetchBills, addBill } from "./actions/billsActions";
 import { fetchUsers } from "./actions/usersActions";
 
 import axios from "axios";
@@ -49,7 +49,6 @@ class App extends Component {
         this.props.fetchHomePageData(res.data);
         this.props.fetchFriends(res.data);
         this.props.fetchBills(res.data);
-        this.props.addFriend(res.data);
         this.props.fetchUsers(res.data);
       })
       .catch(err => {
@@ -148,7 +147,11 @@ class App extends Component {
         <Route
           path="/add-bill-form"
           render={props => (
-            <AddBillForm {...props} friends={this.props.friends} />
+            <AddBillForm
+              {...props}
+              friends={this.props.friends}
+              addBill={this.props.addBill}
+            />
           )}
         />
       </div>
@@ -180,7 +183,8 @@ export default withRouter(
       getToken,
       setInitialStateFetched,
       setLoggedInToTrue,
-      fetchUsers
+      fetchUsers,
+      addBill
     }
   )(App)
 );
