@@ -23,16 +23,17 @@ export const fetchFriends = () => (dispatch, getState) => {
     });
 };
 
-export const addFriend = user => (dispatch, getState) => {
+export const addFriend = id => (dispatch, getState) => {
   const state = getState();
   const options = state.credentialsReducer.options;
 
   dispatch({ type: ADD_FRIEND_START });
   axios
     .post(
-      `https://split-the-bill-backend.herokuapp.com/friends/${user}`,
+      `https://split-the-bill-backend.herokuapp.com/friends/${id}`,
+      {},
       options
-    ) // where user variable is an id
+    )
     .then(res => {
       dispatch({ type: ADD_FRIEND_SUCCESS, payload: res.data });
     })

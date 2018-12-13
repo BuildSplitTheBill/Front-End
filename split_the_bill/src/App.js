@@ -17,10 +17,12 @@ import { fetchUsers } from './actions/usersActions'
 
 import axios from 'axios'
 
+
 import HomeView from '../src/views/HomeView'
 import FriendsView from './views/FriendsView'
 import BillsView from './views/BillsView'
 // import HistoryView from "./views/HistoryView";
+
 
 import LoginPage from './components/LoginPage'
 import RegistrationPage from './components/RegistrationPage'
@@ -100,7 +102,6 @@ class App extends Component {
             <NavLink to="/friends">Friends</NavLink>
             <NavLink to="/bills">Bills</NavLink>
             <NavLink to="/add-bill-form">Add a Bill</NavLink>
-            {/* <NavLink to="/history">History</NavLink> */}
             <NavLink to="/" onClick={() => this.props.userLogout()}>
               Log Out
             </NavLink>
