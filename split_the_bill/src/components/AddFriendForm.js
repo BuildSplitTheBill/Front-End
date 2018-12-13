@@ -28,7 +28,7 @@ class AddFriendForm extends React.Component {
         <h2 className="h2-header">Add New Friend</h2>
         <form className="add-friend-form">
           <div className="form-input">
-            <p>Name: &nbsp;</p>
+            <p>Search by name: &nbsp;</p>
             <input type="text" name="name" onChange={this.handleChange} />
           </div>
 
