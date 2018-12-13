@@ -1,16 +1,16 @@
-import React from "react";
-import BalanceBar from "../components/BalanceBar";
-import BillsList from "../components/BillsList";
+import React from 'react'
+import BalanceBar from '../components/BalanceBar'
+import BillsList from '../components/BillsList'
 
 const BillsView = props => {
   return (
     <React.Fragment>
       <BalanceBar balancesData={props.balancesData} />
       <div className="bills-page">
-        <BillsList bills={props.bills} />
+        <BillsList bills={props.bills} payBill={props.payBill} />
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default BillsView;
+export default BillsView
