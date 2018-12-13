@@ -22,7 +22,7 @@ import axios from "axios";
 import HomeView from "../src/views/HomeView";
 import FriendsView from "./views/FriendsView";
 import BillsView from "./views/BillsView";
-import HistoryView from "./views/HistoryView";
+// import HistoryView from "./views/HistoryView";
 
 import LoginPage from "./components/LoginPage";
 import RegistrationPage from "./components/RegistrationPage";
@@ -100,7 +100,7 @@ class App extends Component {
             <NavLink to="/friends">Friends</NavLink>
             <NavLink to="/bills">Bills</NavLink>
             <NavLink to="/add-bill-form">Add a Bill</NavLink>
-            <NavLink to="/history">History</NavLink>
+            {/* <NavLink to="/history">History</NavLink> */}
             <NavLink to="/" onClick={() => this.props.userLogout()}>
               Log Out
             </NavLink>
@@ -130,7 +130,13 @@ class App extends Component {
           )}
         />
 
-        <Route exact path="/bills" render={props => <BillsView {...props} />} />
+        <Route
+          exact
+          path="/bills"
+          render={props => (
+            <BillsView {...props} balancesData={this.props.balancesData} />
+          )}
+        />
         <Route path="/bills/bill" render={props => <BillPage {...props} />} />
 
         <Route
@@ -138,7 +144,7 @@ class App extends Component {
           render={props => <AddBillForm {...props} />}
         />
 
-        <Route path="/history" render={props => <HistoryView {...props} />} />
+        {/* <Route path="/history" render={props => <HistoryView {...props} />} /> */}
       </div>
     );
   }

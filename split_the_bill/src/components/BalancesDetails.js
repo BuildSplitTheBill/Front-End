@@ -29,7 +29,7 @@ const BalancesDetails = props => {
         </div>
       </div>
 
-      <button className="pay-all-btn">Pay</button>
+      {/* <button className="pay-all-btn">Pay</button> */}
 
       <div className="balances-column">
         <h3 className="green-header">You Are Owed</h3>

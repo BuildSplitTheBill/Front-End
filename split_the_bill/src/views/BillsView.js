@@ -5,7 +5,7 @@ import BillsList from "../components/BillsList";
 const BillsView = props => {
   return (
     <React.Fragment>
-      <BalanceBar />
+      <BalanceBar balancesData={props.balancesData} />
       <div className="bills-page">
         <BillsList />
       </div>
