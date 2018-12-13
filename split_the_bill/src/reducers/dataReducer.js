@@ -5,11 +5,7 @@ import {
 } from "../actions/dataAction";
 
 const initialState = {
-  amountUserIsOwed: null,
-  amountUserOwes: null,
-  balance: null,
-  obligationsUserIsOwed: [],
-  obligationsUserOwes: [],
+  balancesData: [],
   isFetchingData: false,
   error: null
 };
@@ -24,11 +20,7 @@ const dataReducer = (state = initialState, action) => {
     case FETCH_DATA_SUCCESS:
       return {
         ...state,
-        amountUserIsOwed: action.payload,
-        amountUserOwes: action.payload,
-        balance: action.payload,
-        obligationsUserIsOwed: action.payload,
-        obligationsUserOwes: action.payload,
+        balancesData: action.payload,
         isFetchingData: false,
         error: null
       };

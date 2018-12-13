@@ -48,7 +48,6 @@ class App extends Component {
       .then(res => {
         setInitialStateFetched();
         setLoggedInToTrue();
-        console.log(res);
         this.props.fetchHomePageData(res.data);
       })
       .catch(err => {
@@ -110,7 +109,13 @@ class App extends Component {
         <Route
           exact
           path="/"
-          render={props => <HomeView {...props} data={this.data} />}
+          render={props => (
+            <HomeView
+              {...props}
+              data={this.data}
+              balancesData={this.props.balancesData}
+            />
+          )}
         />
 
         <Route
@@ -143,7 +148,8 @@ const mapStateToProps = state => ({
   loggedIn: state.credentialsReducer.loggedIn,
   friends: state.friendsReducer.friends,
   options: state.credentialsReducer.options,
-  fetchingInitialState: state.credentialsReducer.fetchingInitialState
+  fetchingInitialState: state.credentialsReducer.fetchingInitialState,
+  balancesData: state.dataReducer.balancesData
 });
 
 export default withRouter(

@@ -6,9 +6,9 @@ import BalancesDetails from "../components/BalancesDetails";
 const BalancesView = props => {
   return (
     <React.Fragment>
-      <BalanceBar />
+      <BalanceBar balancesData={props.balancesData} />
       <div className="balances-page">
-        <BalancesDetails />
+        <BalancesDetails balancesData={props.balancesData} />
       </div>
     </React.Fragment>
   );
