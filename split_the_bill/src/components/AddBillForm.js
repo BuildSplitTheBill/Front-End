@@ -47,7 +47,6 @@ class AddBillForm extends Component {
           <form onSubmit={handleSubmit}>
             <div className="form-input">
               <input
-                required
                 type="text"
                 name="description"
                 placeholder="description"
@@ -58,7 +57,6 @@ class AddBillForm extends Component {
 
             <div className="form-input">
               <input
-                required
                 type="number"
                 name="amount"
                 placeholder="amount"
@@ -73,7 +71,6 @@ class AddBillForm extends Component {
                     {name}
                   </label>
                   <input
-                    required
                     type="checkbox"
                     name={id}
                     onChange={handleCheckChange}

@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { Route, NavLink, withRouter } from "react-router-dom";
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Route, NavLink, withRouter } from 'react-router-dom'
 
 import {
   userLogin,
@@ -9,60 +9,61 @@ import {
   getToken,
   setInitialStateFetched,
   setLoggedInToTrue
-} from "./actions/credentialsActions";
-import { fetchFriends, addFriend } from "./actions/friendsActions";
-import { fetchHomePageData } from "./actions/dataActions";
-import { fetchBills } from "./actions/billsActions";
-import { fetchUsers } from "./actions/usersActions";
+} from './actions/credentialsActions'
+import { fetchFriends, addFriend } from './actions/friendsActions'
+import { fetchHomePageData } from './actions/dataActions'
+import { fetchBills, addBill, payBill } from './actions/billsActions'
+import { fetchUsers } from './actions/usersActions'
 
-import axios from "axios";
+import axios from 'axios'
 
-import HomeView from "../src/views/HomeView";
-import FriendsView from "./views/FriendsView";
-import BillsView from "./views/BillsView";
+
+import HomeView from '../src/views/HomeView'
+import FriendsView from './views/FriendsView'
+import BillsView from './views/BillsView'
 // import HistoryView from "./views/HistoryView";
 
-import LoginPage from "./components/LoginPage";
-import RegistrationPage from "./components/RegistrationPage";
-import AddBillForm from "./components/AddBillForm";
-import BillPage from "./components/BillPage";
 
-import "./css/index.css";
+import LoginPage from './components/LoginPage'
+import RegistrationPage from './components/RegistrationPage'
+import AddBillForm from './components/AddBillForm'
+import BillPage from './components/BillPage'
+
+import './css/index.css'
 
 class App extends Component {
   componentDidMount() {
-    const { getToken, setInitialStateFetched, setLoggedInToTrue } = this.props;
-    getToken();
+    const { getToken, setInitialStateFetched, setLoggedInToTrue } = this.props
+    getToken()
 
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token')
     const options = {
       headers: {
         Authorization: token
       }
-    };
+    }
 
     axios
-      .get("https://split-the-bill-backend.herokuapp.com/", options)
+      .get('https://split-the-bill-backend.herokuapp.com/', options)
       .then(res => {
-        setInitialStateFetched();
-        setLoggedInToTrue();
-        this.props.fetchHomePageData(res.data);
-        this.props.fetchFriends(res.data);
-        this.props.fetchBills(res.data);
-        this.props.addFriend(res.data);
-        this.props.fetchUsers(res.data);
+        setInitialStateFetched()
+        setLoggedInToTrue()
+        this.props.fetchHomePageData(res.data)
+        this.props.fetchFriends(res.data)
+        this.props.fetchBills(res.data)
+        this.props.fetchUsers(res.data)
       })
       .catch(err => {
-        setInitialStateFetched();
-        console.log(err);
-      });
+        setInitialStateFetched()
+        console.log(err)
+      })
   }
 
   render() {
-    const { fetchingInitialState } = this.props;
+    const { fetchingInitialState } = this.props
 
     if (fetchingInitialState) {
-      return <h1>Loading...</h1>;
+      return <h1>Loading...</h1>
     }
 
     if (!this.props.loggedIn) {
@@ -90,7 +91,7 @@ class App extends Component {
             )}
           />
         </React.Fragment>
-      );
+      )
     }
 
     return (
@@ -101,7 +102,6 @@ class App extends Component {
             <NavLink to="/friends">Friends</NavLink>
             <NavLink to="/bills">Bills</NavLink>
             <NavLink to="/add-bill-form">Add a Bill</NavLink>
-            {/* <NavLink to="/history">History</NavLink> */}
             <NavLink to="/" onClick={() => this.props.userLogout()}>
               Log Out
             </NavLink>
@@ -140,6 +140,7 @@ class App extends Component {
               {...props}
               balancesData={this.props.balancesData}
               bills={this.props.bills}
+              payBill={this.props.payBill}
             />
           )}
         />
@@ -148,11 +149,15 @@ class App extends Component {
         <Route
           path="/add-bill-form"
           render={props => (
-            <AddBillForm {...props} friends={this.props.friends} />
+            <AddBillForm
+              {...props}
+              friends={this.props.friends}
+              addBill={this.props.addBill}
+            />
           )}
         />
       </div>
-    );
+    )
   }
 }
 
@@ -164,7 +169,7 @@ const mapStateToProps = state => ({
   balancesData: state.dataReducer.balancesData,
   bills: state.billsReducer.bills,
   users: state.usersReducer.users
-});
+})
 
 export default withRouter(
   connect(
@@ -180,7 +185,9 @@ export default withRouter(
       getToken,
       setInitialStateFetched,
       setLoggedInToTrue,
-      fetchUsers
+      fetchUsers,
+      addBill,
+      payBill
     }
   )(App)
-);
+)
