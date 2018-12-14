@@ -454,6 +454,11 @@ form .form-input select {
   margin-bottom: 25px;
   padding-left: 20px;
 }
+.add-bill-page .form-container .form-checkbox {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30%;
+}
 .add-bill-page .form-container .form-checkbox label {
   font-size: 2rem;
   padding-left: 30px;
